@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/style/style.css">
     <!-- <link rel="stylesheet" type="text/css" href="/frontend/libraries/bootstrap/css/bootstrap.css"> -->
-	<script type="text/javascript" src="/frontend/libraries/jquery/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript" src="/frontend/libraries/bootstrap/js/bootstrap.js"></script>
+	  <script type="text/javascript" src="/frontend/libraries/jquery/jquery-3.6.0.min.js"></script>
+	  <script type="text/javascript" src="/frontend/libraries/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>SIMAK</title>
 </head>
 <body>  
     <div class="container">
         
-        <!-- header -->
+        <!-- section header -->
 
         <div class="header-content">
             <header>
@@ -27,9 +28,9 @@
             </header>            
         </div>
 
-        <!-- end header-content  -->
+        <!-- end section header  -->
 
-        <!-- sidebar-content  -->
+        <!-- section sidebar  -->
 
         <div class="sidebar">
             <div class="logo">
@@ -182,7 +183,7 @@
             </div>
         </div>
 
-        <!-- end sidebar-content  -->
+        <!-- end section sidebar  -->
 
         <!-- main content -->
 
@@ -236,7 +237,7 @@
                     
                 <div class="box-table">
                     <div class="table-teacher">
-                        <table class="table-content">
+                        <table class="table-kpi-teacher">
                                 <tr>
                                   <th style="text-align: left;">Nama Guru</th>
                                   <th>Point</th>
@@ -281,7 +282,7 @@
                         </table>
                     </div>
                     <div class="table-absence">
-                        <table class="table-content">
+                        <table class="table-data-absence">
                                 <tr>
                                   <th>#</th>
                                   <th style="text-align: left;">Nama Wali Kelas</th>
@@ -331,12 +332,78 @@
                                 </tr>
                         </table>
                     </div>
-                </div>
+                  </div>
+                  <div class="chart-title">
+                      <h3 class="title-student">Kehadiran Murid</h3>
+                      <h3 class="title-teacher">Kehadiran Guru</h3>
+                      <h3 class="title-election">Pemilihan Osis 2019-2020</h3>
+                  </div>  
+                  <div class="chart">
+                        <div class="charts-student">
+                          <div class="legend-student">
+                            <button class="btn-student">Lihat Detail</button>
+                            <ul>
+                              <li>
+                                  <i class="fas fa-square" style="color: #FFDC09;"> </i>
+                                  <span style="color: #7f8c8d">Kelas X</span>
+                              </li>
+                            </ul>
+                            <ul>
+                              <li>
+                                  <i class="fas fa-square" style="color: #26468b;"> </i>
+                                  <span style="color: #7f8c8d">Kelas XI</span>
+                              </li>
+                            </ul>
+                            <ul>
+                              <li>
+                                  <i class="fas fa-square" style="color: #00c9f2;"> </i>
+                                  <span style="color: #7f8c8d">Kelas XII</span>
+                              </li>
+                            </ul>
+                          </div>
+                          <canvas id="chartStudent" width="130px" height="130px"></canvas>
+                        </div>
+                        <div class="chart-teacher">
+                          <div class="legend-teacher">
+                            <button class="btn-teacher">Lihat Detail</button>
+                            <ul>
+                              <li>
+                                  <i class="fas fa-square" style="color: #00c9f2;"> </i>
+                                  <span style="color: #7f8c8d">Perbulan</span>
+                              </li>
+                            </ul>
+                          </div>
+                        <canvas id="chartTeacher" width="130px" height="130px"></canvas>
+                        </div>
+                        <div class="student-election">
+                            <h3>11 Juni 2020</h3>
+                            <hr/>
+                            <div class="radio">
+                              <form action="">
+                              <ul>
+                                <li>
+                                  <input type="radio" name="student" 
+                                  value="Corenelia Taka Nati"> Corenelia Taka Nati
+                                </li>
+                                <li>
+                                  <input type="radio" name="student" 
+                                  value="ayla Nelly"> Kayla Nelly
+                                </li>
+                                <li>
+                                  <input type="radio" name="student"
+                                   value="Adam Gate">  Adam Gate
+                                </li>
+                              </ul>
+                              </form>
+                            </div>
+                        </div>
+                  </div>
+              </div>
         </main>
-    
         <!-- end main content  -->
         
 
 <script src="/frontend/script/script.js"></script>
+<script src="/frontend/script/chart.js" type="text/javascript"></script>
 </body>
 </html>
